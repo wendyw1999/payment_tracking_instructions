@@ -63,26 +63,26 @@ Then you will see a list of triggers in this container. Click on the `New` butto
 - triggerType: in the drop down menu, select `custom event`
 - event name: remember the event name we had in the javascript code. (the string after `event:`). Put down `donationComplete`
 
-<img src="triggerDetails.png" width="300" />
+<img src="triggerDetails.png" width="600" />
 
 ## Setting up variables
 We have two variables we want to record: donationAmount and action. 
 We will create one variable in Google Tag Manager for each. 
 
 Switch to variables tab. 
-<img src="variablesLocation.png" width="300" />
+<img src="variablesLocation.png" width="600" />
 Scroll all the way to bottom, where you will see User-Defined Variables section.  
-<img src="newVariable.png" width="300" />
+<img src="newVariable.png" width="600" />
 
 ### Creating donationAmount variable
 
-<img src="donationAmountDetails.png" width="300" />
+<img src="donationAmountDetails.png" width="600" />
 - variable name: `dlv - donationAmount`
 - variable type: in the drop down menu, select `data layer variable`
 - variable name: remember the key we had in the javascript code? Put in `donationAmount`
 
 ### Creating actionType variable
-<img src="actionTypeDetails.png" width="300" />
+<img src="actionTypeDetails.png" width="600" />
 
 - variable name: `dlv - actionType`
 - variable type: in the drop down menu, select `data layer variable`
@@ -94,7 +94,7 @@ Scroll all the way to bottom, where you will see User-Defined Variables section.
 ### Google Analytics Tags
 Switch to  Tag tab. Click on the `new` button on the upper right corner. 
 
-<img src="tagDetails.PNG" width="300" />
+<img src="tagDetails.PNG" width="600" />
 
 - name this tag `GA Event - donationComplete`
 - in the tag type, select Google Analytics Universal Tracking
@@ -105,10 +105,10 @@ Switch to  Tag tab. Click on the `new` button on the upper right corner.
 - Value, click on the little lego symbol, and select dlv - donationAmount. 
 - Analytics Setting, select `Google Analytics Settings` (if already set up). If there are no existing Google Analytics Setting, select create new variable
 - In the bottom triggering section, select the trigger we just created. 
-<img src="tagDetails2.PNG" width="300" />
+<img src="tagDetails2.PNG" width="600" />
 
 <h4> If need to create new Google Analytics Settings... </h4>
-  <img src="GADetails.png" width="300" />
+  <img src="GADetails.png" width="600" />
 
 - Name: Google Analytics Setting 
 
@@ -118,50 +118,50 @@ Switch to  Tag tab. Click on the `new` button on the upper right corner.
 
 ### Checking If it works in Analytics
 1. Preview
-<img src="preview1.PNG" width="300" />
+<img src="preview1.PNG" width="600" />
 Click on the preview on the upper right corner.
 2. Enter your website address (with the html & js code implemented)
-<img src="preview2.PNG" width="300" />
+<img src="preview2.PNG" width="600" />
 
 3. Test it out by clicking on the button with a random donation amount
-<img src="preview3.PNG" width="300" />
+<img src="preview3.PNG" width="600" />
 
 4. Go to Google Analytics
 5. Create a new Goal (Settings -> Admin -> View -> Goals). Set category equals to `donation Complete`. This is the same as whatever we entered in the `GA - donationComplete` tag.
-<img src="analytics1.PNG" width="300" />
+<img src="analytics1.PNG" width="600" />
 If it is already created, then you don't need to create it. 
 
 6. Go to realtime -> events, you will see your event with action name, and label. You don't see the value, don't worry!
-<img src="analytics3.PNG" width="300" />
+<img src="analytics3.PNG" width="600" />
 Now you now the tags are connected to your google analytics account
 7. Go to Behavior -> Events -> Overview, you will see all the events under this google analytics account. 
 - Make sure you have the date set to today's date. 
 - If you don't see anything show up, but you see it in realtime tab, just give it more time. This behavior tab is slower than realtimes. 
-<img src="analytics2.PNG" width="300" />
+<img src="analytics2.PNG" width="600" />
 Once you see it, Click on the `donation Complete` or whatever your category is. 
 8. Now you see the value associated with the event. 
-<img src="GAValueDetails.PNG" width="300" />
+<img src="GAValueDetails.PNG" width="600" />
 
 
 # Google Ads Set up
 
 Before we begin creating another Tag... we will have to create conversion tracking first inside Google Ads
-<img src="googleAds1.PNG" width="300" />
+<img src="googleAds1.PNG" width="600" />
 
 1. Make sure you already have the donation compaign associated with the AdWords Account. Go to Tools -> Conversions
 2. Create new conversion tracking, select `Website`
-<img src="ads2.PNG" width="300" />
+<img src="ads2.PNG" width="600" />
 3. For the action category, select Purchase. For the conversion name, put in the landing page url first, then put Donation Amount
-<img src="ads3.PNG" width="300" />
+<img src="ads3.PNG" width="600" />
 Use different values for each conversion
-<img src="ads4.PNG" width="300" />
+<img src="ads4.PNG" width="700" />
 Click continue/save
 4. Select `Use Google Tag Manager`, you will receive ConversionID and ConversionLabel. We will need this to create tags. 
-<img src="ads5.PNG" width="300" />
+<img src="ads5.PNG" width="700" />
 
 ## Setting up google tag manager Google Ads tag
 1. Go back to Google Tag Manager, create a new tag, with the following details: 
-<img src="ads6.PNG" width="300" />
+<img src="ads6.PNG" width="700" />
 2. Use the same conversionID and label we just got from Google Ads. 
 3. For the conversionValue, select from the dropdown, `dlv - donationAmount`.
 4. For the triggering section, select again the trigger we created. 
@@ -170,9 +170,9 @@ Click continue/save
 1. Select the donation campaigns from all the campaigns on the left hand side
 2. Click Settings, and find Conversions. If you can't find it, click the Addtional Settings
 3. In the Conversions box, select the second checkbox
-<img src="adsBefore7.PNG" width="300" />
+<img src="adsBefore7.PNG" width="700" />
 
 4. select the conversion we just created and click save. 
-<img src="ads7.PNG" width="300" />
+<img src="ads7.PNG" width="700" />
 
 You are all Done!!!
